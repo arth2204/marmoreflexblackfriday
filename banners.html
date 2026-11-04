@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Banners MarmoreFlex</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="brand/favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" crossorigin="anonymous">
+  <style>
+    /* Cores da MarmoreFlex: petróleo, laranja dos botões e Black Friday preto + dourado do site atual */
+    :root { --p: #0f3d52; --n: #071d28; --k: #0b0b0c; --gold: #d4af37; --cta: #f97316; --m: #b8cbd4; --b: rgba(255,255,255,.14); }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #e8f1f5; color: #12222b; font-family: Inter, system-ui, sans-serif; }
+    .page-head { padding: 24px 16px; max-width: 1100px; margin: 0 auto; }
+    .page-head h1 { font-family: "Barlow Condensed", sans-serif; font-weight: 800; margin: 0; color: var(--p); font-size: 36px; }
+    .page-head p { color: #4b5563; margin: 6px 0 0; }
+    .toolbar { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+    .toolbar button, .item button { background: var(--p); color: #fff; border: 0; border-radius: 8px; padding: 10px 14px; font-weight: 800; cursor: pointer; }
+    .toolbar button.ghost, .item button.ghost { background: transparent; color: var(--p); border: 1px solid var(--p); }
+    .list { display: grid; gap: 36px; padding: 0 16px 60px; max-width: 1100px; margin: 0 auto; }
+    .item { min-width: 0; }
+    .item h2 { font-size: 15px; margin: 0 0 8px; }
+    .item .meta { color: #6b7280; font-size: 13px; margin-bottom: 10px; }
+    .item .actions { display: flex; gap: 8px; margin-bottom: 10px; align-items: center; flex-wrap: wrap; }
+    .item .status { font-size: 12px; color: #11803b; }
+    .frame { overflow: hidden; border-radius: 6px; box-shadow: 0 10px 30px rgba(7,29,40,.25); }
+    .frame > .ab { transform-origin: 0 0; }
+
+    /* ---------- Artboards ---------- */
+    .ab { position: relative; overflow: hidden; background: var(--n); color: #fff; font-family: Inter, sans-serif; }
+    .ab .d, .ab .d * { white-space: nowrap; }
+    .ab .d { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-weight: 800; text-transform: uppercase; line-height: .92; letter-spacing: 0; }
+    .ab .hl { background: var(--gold); color: var(--k); padding: 0 .16em .04em; display: inline-block; }
+    .ab .icon { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .glow { position: absolute; border-radius: 50%; background: radial-gradient(circle, rgba(15,61,82,.95), transparent 70%); }
+    .marble { position: absolute; inset: 0; background: url(images/cores/marmore-classico.jpeg) center/cover; opacity: .08; }
+    .stripes { background: repeating-linear-gradient(-45deg, var(--gold) 0 22px, var(--k) 22px 44px); }
+    .tag { display: inline-block; border: 3px solid var(--gold); background: var(--k); color: var(--gold); font-family: "Barlow Condensed", sans-serif; font-weight: 800; letter-spacing: 6px; transform: skewX(-8deg); }
+    .off { position: absolute; border-radius: 50%; background: var(--gold); color: var(--k); display: flex; flex-direction: column; align-items: center; justify-content: center; transform: rotate(10deg); box-shadow: 0 14px 40px rgba(0,0,0,.45); border: 6px solid var(--k); z-index: 3; }
+    .off b { font-family: "Barlow Condensed", sans-serif; font-weight: 800; line-height: .9; }
+    .off small { font-weight: 800; letter-spacing: 2px; }
+    .ibox { background: var(--p); color: var(--gold); border-radius: 18px; display: flex; align-items: center; justify-content: center; flex: none; }
+    .pcard { position: absolute; background: #fff; border-radius: 28px; overflow: hidden; box-shadow: 0 30px 70px rgba(0,0,0,.45); }
+    .pcard img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .bar { position: absolute; left: 0; display: flex; align-items: center; justify-content: space-around; background: var(--gold); color: var(--k); font-weight: 800; letter-spacing: .5px; }
+    .logo-chip { display: inline-flex; align-items: center; background: #fff; border-radius: 16px; padding: 8px 18px; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+    .logo-chip img { height: 100%; width: auto; display: block; }
+    .cta { background: var(--cta); color: #fff; border-radius: 22px; display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 0 #c2540a; }
+  </style>
+</head>
+<body>
+  <!-- Ícones (embutidos no próprio arquivo para exportar o PNG) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 6h11v10H2zM13 9h4l4 4v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 2 9 5v10l-9 5-9-5V7z"/><path d="m3 7 9 5 9-5M12 12v10"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 8 5-3 5 3-1.5-8"/><path d="m10 9 1.5 1.5L14.5 7.5"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15.5-6.3L21 8M21 3v5h-5M21 12a9 9 0 0 1-15.5 6.3L3 16M3 21v-5h5"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s7 7.5 7 12a7 7 0 0 1-14 0c0-4.5 7-12 7-12z"/></symbol>
+    <symbol id="i-ruler" viewBox="0 0 24 24"><path d="m3 17 14-14 4 4L7 21z"/><path d="m7 13 2 2M10 10l2 2M13 7l2 2"/></symbol>
+    <symbol id="i-hammer" viewBox="0 0 24 24"><path d="m15 12-8.4 8.4a2 2 0 0 1-2.8-2.8L12.2 9.2"/><path d="m17.6 14.6 4-4-6.2-6.2a3 3 0 0 0-4.2 0L10 5.6l2 2-1.4 1.4 4.6 4.6 1.4-1.4z"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.5-.8 1.5-1.6 0-1.3-1-1.6-1-2.9 0-1 .8-1.5 1.8-1.5H17a4 4 0 0 0 4-4C21 6.6 17 3 12 3z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7" r="1.2"/><circle cx="15" cy="7.5" r="1.2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 21v-1a7 7 0 0 1 14 0v1"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M22 21v-1a7 7 0 0 0-4-6.3"/></symbol>
+    <symbol id="i-badge" viewBox="0 0 24 24"><path d="m12 2 2.4 2.2 3.2-.4.9 3.1 2.8 1.6-1.2 3 1.2 3-2.8 1.6-.9 3.1-3.2-.4L12 22l-2.4-2.2-3.2.4-.9-3.1-2.8-1.6 1.2-3-1.2-3 2.8-1.6.9-3.1 3.2.4z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  </svg>
+
+  <div class="page-head">
+    <h1>BANNERS MARMOREFLEX · BLACK FRIDAY</h1>
+    <p>Cada banner é HTML editável. Use "Baixar PNG" para anúncios, ou "Salvar no site" para atualizar a imagem usada pela loja (funciona com o servidor local de tools/serve.ps1).</p>
+    <div class="toolbar">
+      <button data-all-save>Salvar todos no site</button>
+      <button class="ghost" data-all-download>Baixar todos (PNG)</button>
+    </div>
+  </div>
+
+  <div class="list">
+
+    <!-- 1. CAPA DO PRODUTO -->
+    <section class="item" data-name="capa-produto" data-w="1080" data-h="1080">
+      <h2>1 · Capa do produto</h2><div class="meta">1080×1080 · 1ª foto da galeria e imagem de compartilhamento</div>
+      <div class="actions"><button data-save>Salvar no site</button><button class="ghost" data-download>Baixar PNG</button><span class="status"></span></div>
+      <div class="frame"><div class="ab" style="width:1080px;height:1080px">
+        <div class="marble"></div>
+        <div class="glow" style="right:-260px;top:-260px;width:820px;height:820px"></div>
+        <div style="position:absolute;left:56px;top:50px">
+          <div><div class="logo-chip" data-logo style="height:84px"></div></div>
+          <div class="tag" style="font-size:32px;padding:4px 18px;margin-top:26px">BLACK FRIDAY</div>
+          <div class="d" style="font-size:96px;margin-top:20px">Piso efeito mármore</div>
+          <div class="d" style="font-size:100px;margin-top:10px"><span class="hl">sem quebra-quebra</span></div>
+        </div>
+        <div class="off" style="right:40px;top:400px;width:230px;height:230px"><small style="font-size:22px">ATÉ</small><b style="font-size:96px">47%</b><small style="font-size:24px">OFF</small></div>
+        <div class="pcard" style="left:150px;top:462px;width:700px;height:520px"><img src="images/produto/galeria-04-balde-kit.webp" alt=""></div>
+        <div style="position:absolute;left:40px;top:870px;background:var(--k);border:3px solid var(--gold);border-radius:18px;padding:14px 22px;font-weight:800;font-size:26px;line-height:1.2">22 CORES<br><span style="color:var(--m);font-size:20px">2KG · 5KG · 10KG · 18KG</span></div>
+        <div class="bar" style="bottom:0;width:1080px;height:84px;font-size:25px">
+          <span>✓ FRETE GRÁTIS</span><span>✓ KIT DE APLICAÇÃO GRÁTIS</span><span>✓ 7 DIAS PARA DEVOLVER</span>
+        </div>
+      </div></div>
+    </section>
+
+    <!-- 2. BANNER PRINCIPAL DA DESCRIÇÃO -->
+    <section class="item" data-name="banner-principal" data-w="1080" data-h="1350">
+      <h2>2 · Banner principal da descrição</h2><div class="meta">1080×1350 · aparece na descrição do produto</div>
+      <div class="actions"><button data-save>Salvar no site</button><button class="ghost" data-download>Baixar PNG</button><span class="status"></span></div>
+      <div class="frame"><div class="ab" style="width:1080px;height:1350px">
+        <div style="position:absolute;left:0;top:0;width:1080px;height:16px" class="stripes"></div>
+        <div style="position:absolute;left:56px;top:66px;right:56px">
+          <div class="logo-chip" data-logo style="height:74px"></div>
+          <div class="d" style="font-size:118px;margin-top:34px">Efeito mármore</div>
+          <div class="d" style="font-size:124px;margin-top:10px"><span class="hl">e alto brilho</span></div>
+          <div style="font-size:26px;letter-spacing:5px;margin-top:22px;color:var(--m);font-weight:600">REVESTIMENTO EPÓXI AUTONIVELANTE</div>
+        </div>
+        <div style="position:absolute;left:0;top:500px;width:1080px;height:650px;background:url(images/produto/galeria-08-ambiente.webp) center/cover no-repeat"></div>
+        <div style="position:absolute;left:0;top:490px;width:1080px;height:150px;background:linear-gradient(var(--n),rgba(7,29,40,0))"></div>
+        <div style="position:absolute;left:0;top:1010px;width:1080px;height:140px;background:linear-gradient(rgba(7,29,40,0),var(--n))"></div>
+        <div style="position:absolute;left:56px;right:56px;top:930px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+          <div style="background:rgba(7,29,40,.92);border:2px solid var(--b);border-radius:18px;padding:16px;display:flex;gap:14px;align-items:center"><div class="ibox" style="width:72px;height:72px;font-size:40px"><svg class="icon"><use href="#i-ruler"/></svg></div><div><div class="d" style="font-size:50px">5 M²</div><div style="font-size:16px;font-weight:700;color:var(--m)">POR QUILO</div></div></div>
+          <div style="background:rgba(7,29,40,.92);border:2px solid var(--b);border-radius:18px;padding:16px;display:flex;gap:14px;align-items:center"><div class="ibox" style="width:72px;height:72px;font-size:40px"><svg class="icon"><use href="#i-palette"/></svg></div><div><div class="d" style="font-size:50px">22</div><div style="font-size:16px;font-weight:700;color:var(--m)">CORES</div></div></div>
+          <div style="background:rgba(7,29,40,.92);border:2px solid var(--b);border-radius:18px;padding:16px;display:flex;gap:14px;align-items:center"><div class="ibox" style="width:72px;height:72px;font-size:40px"><svg class="icon"><use href="#i-clock"/></svg></div><div><div class="d" style="font-size:50px">12–24H</div><div style="font-size:16px;font-weight:700;color:var(--m)">SECAGEM</div></div></div>
+        </div>
+        <div style="position:absolute;left:0;bottom:0;width:1080px;height:200px;background:var(--k);border-top:4px solid var(--gold);display:grid;grid-template-columns:repeat(3,1fr);align-items:center;padding:0 30px">
+          <div style="display:flex;gap:16px;align-items:center"><div class="ibox" style="width:76px;height:76px;font-size:40px"><svg class="icon"><use href="#i-hammer"/></svg></div><div style="font-size:21px;line-height:1.25"><b>SEM</b><br><span style="color:var(--m)">QUEBRA-QUEBRA</span></div></div>
+          <div style="display:flex;gap:16px;align-items:center"><div class="ibox" style="width:76px;height:76px;font-size:40px"><svg class="icon"><use href="#i-box"/></svg></div><div style="font-size:21px;line-height:1.25"><b>KIT + PRIMER</b><br><span style="color:var(--m)">INCLUSOS</span></div></div>
+          <div style="display:flex;gap:16px;align-items:center"><div class="ibox" style="width:76px;height:76px;font-size:40px"><svg class="icon"><use href="#i-drop"/></svg></div><div style="font-size:21px;line-height:1.25"><b>IMPERMEÁVEL</b><br><span style="color:var(--m)">E ANTIDERRAPANTE</span></div></div>
+        </div>
+      </div></div>
+    </section>
+
+    <!-- 3. BANNER CONFIANÇA -->
+    <section class="item" data-name="banner-confianca" data-w="750" data-h="2000">
+      <h2>3 · Banner de confiança</h2><div class="meta">750×2000 · para anúncios e redes sociais</div>
+      <div class="actions"><button data-save>Salvar no site</button><button class="ghost" data-download>Baixar PNG</button><span class="status"></span></div>
+      <div class="frame"><div class="ab" style="width:750px;height:2000px">
+        <div style="display:flex;gap:14px;justify-content:center;padding:34px 30px 0">
+          <div style="flex:1;display:flex;gap:12px;align-items:center;justify-content:center;border:2px solid var(--b);border-radius:14px;padding:14px;font-weight:800;font-size:19px"><span style="color:var(--gold);font-size:30px;display:flex"><svg class="icon"><use href="#i-refresh"/></svg></span>7 DIAS PARA<br>DEVOLVER</div>
+          <div style="flex:1;display:flex;gap:12px;align-items:center;justify-content:center;background:var(--gold);color:var(--k);border-radius:14px;padding:14px;font-weight:800;font-size:19px"><span style="font-size:30px;display:flex"><svg class="icon"><use href="#i-lock"/></svg></span>COMPRA<br>SEGURA</div>
+        </div>
+        <div style="display:flex;justify-content:center;gap:30px;margin:14px 30px 0;border:2px solid var(--b);border-radius:14px;padding:16px;font-size:18px;font-weight:700">
+          <span style="display:flex;gap:10px;align-items:center"><span style="font-size:28px;display:flex;color:var(--gold)"><svg class="icon"><use href="#i-truck"/></svg></span>FRETE GRÁTIS p/ todo o Brasil</span>
+          <span style="display:flex;gap:10px;align-items:center"><span style="font-size:28px;display:flex;color:var(--gold)"><svg class="icon"><use href="#i-box"/></svg></span>KIT INCLUSO</span>
+        </div>
+        <div style="text-align:center;margin-top:50px"><div class="logo-chip" data-logo style="height:90px"></div></div>
+        <p style="text-align:center;font-size:23px;line-height:1.5;color:var(--m);margin:26px 56px 0">Renove seu piso sem quebra-quebra. Revestimento epóxi autonivelante com efeito mármore e alto brilho, aplicado sobre o piso existente.</p>
+        <div style="margin:44px 30px 0;border-radius:22px;overflow:hidden;background:linear-gradient(165deg,var(--p),var(--n) 60%);border:2px solid var(--b);position:relative">
+          <div class="d" style="text-align:center;font-size:76px;padding-top:40px">Entrega <span class="hl">segura!</span></div>
+          <div style="margin:30px auto 0;width:300px;height:170px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:160px"><svg class="icon" style="stroke-width:1.3"><use href="#i-truck"/></svg></div>
+          <div style="height:12px;margin-top:10px" class="stripes"></div>
+          <div style="padding:10px 40px 26px">
+            <div style="display:flex;gap:22px;padding:24px 0;border-bottom:1px solid var(--b)"><span style="font-size:52px;display:flex;color:var(--gold)"><svg class="icon"><use href="#i-box"/></svg></span><div style="font-size:21px;line-height:1.4"><b style="font-size:23px">Postado em até 2 dias úteis</b><br><span style="color:var(--m)">Frete grátis para todo o Brasil.</span></div></div>
+            <div style="display:flex;gap:22px;padding:24px 0;border-bottom:1px solid var(--b)"><span style="font-size:52px;display:flex;color:var(--gold)"><svg class="icon"><use href="#i-pin"/></svg></span><div style="font-size:21px;line-height:1.4"><b style="font-size:23px">Código de rastreio</b><br><span style="color:var(--m)">Enviado por e-mail assim que o pedido é postado.</span></div></div>
+            <div style="display:flex;gap:22px;padding:24px 0"><span style="font-size:52px;display:flex;color:var(--gold)"><svg class="icon"><use href="#i-shield"/></svg></span><div style="font-size:21px;line-height:1.4"><b style="font-size:23px">Chegou com avaria?</b><br><span style="color:var(--m)">Reenvio ou reembolso sem custo.</span></div></div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:56px">
+          <span class="d" style="font-size:66px">Por que comprar na</span><span class="d hl" style="font-size:66px;padding:4px 14px 6px">MarmoreFlex?</span>
+        </div>
+        <div style="margin:30px 56px 0">
+          <div style="display:flex;gap:26px;align-items:center;padding:20px 0;border-bottom:1px solid var(--b)"><span style="font-size:52px;display:flex;color:var(--gold)"><svg class="icon"><use href="#i-users"/></svg></span><div style="font-size:20px"><b style="font-size:24px">+8.500 VENDIDOS</b><br><span style="color:var(--m)">Nota 4,8 em 407 avaliações.</span></div></div>
+          <div style="display:flex;gap:26px;align-items:center;padding:20px 0;border-bottom:1px solid var(--b)"><span style="font-size:52px;display:flex;color:var(--gold)"><svg class="icon"><use href="#i-box"/></svg></span><div style="font-size:20px"><b style="font-size:24px">KIT DE APLICAÇÃO GRÁTIS</b><br><span style="color:var(--m)">Primer, desempenadeira, rolo e espátulas.</span></div></div>
+          <div style="display:flex;gap:26px;align-items:center;padding:20px 0;border-bottom:1px solid var(--b)"><span style="font-size:52px;display:flex;color:var(--gold)"><svg class="icon"><use href="#i-badge"/></svg></span><div style="font-size:20px"><b style="font-size:24px">EMPRESA REGISTRADA</b><br><span style="color:var(--m)">CNPJ 64.704.756/0001-02.</span></div></div>
+          <div style="display:flex;gap:26px;align-items:center;padding:20px 0;border-bottom:1px solid var(--b)"><span style="font-size:52px;display:flex;color:var(--gold)"><svg class="icon"><use href="#i-lock"/></svg></span><div style="font-size:20px"><b style="font-size:24px">PAGAMENTO SEGURO</b><br><span style="color:var(--m)">Não armazenamos dados do seu cartão.</span></div></div>
+          <div style="display:flex;gap:26px;align-items:center;padding:20px 0"><span style="font-size:52px;display:flex;color:var(--gold)"><svg class="icon"><use href="#i-award"/></svg></span><div style="font-size:20px"><b style="font-size:24px">GARANTIA DE 90 DIAS</b><br><span style="color:var(--m)">Contra defeitos de fabricação.</span></div></div>
+        </div>
+        <div style="position:absolute;left:0;bottom:0;width:750px;height:16px" class="stripes"></div>
+      </div></div>
+    </section>
+
+    <!-- 4. STORY / REELS -->
+    <section class="item" data-name="story-black-friday" data-w="1080" data-h="1920">
+      <h2>4 · Story / Reels Black Friday</h2><div class="meta">1080×1920 · anúncios no Instagram/TikTok</div>
+      <div class="actions"><button data-save>Salvar no site</button><button class="ghost" data-download>Baixar PNG</button><span class="status"></span></div>
+      <div class="frame"><div class="ab" style="width:1080px;height:1920px;background:var(--k)">
+        <div class="marble" style="opacity:.06"></div>
+        <div class="glow" style="left:-300px;top:380px;width:1000px;height:1000px"></div>
+        <div style="position:absolute;left:0;top:0;width:1080px;height:22px" class="stripes"></div>
+        <div style="position:absolute;top:96px;left:0;right:0;text-align:center"><div class="logo-chip" data-logo style="height:96px"></div></div>
+        <div style="position:absolute;top:250px;left:0;right:0;text-align:center">
+          <div class="d" style="font-size:220px;line-height:.86">BLACK</div>
+          <div class="d" style="font-size:220px;line-height:.9;margin-top:10px"><span class="hl">FRIDAY</span></div>
+        </div>
+        <div class="pcard" style="left:140px;top:740px;width:800px;height:600px"><img src="images/produto/galeria-04-balde-kit.webp" alt=""></div>
+        <div class="off" style="right:46px;top:660px;width:250px;height:250px"><small style="font-size:24px">ATÉ</small><b style="font-size:104px">47%</b><small style="font-size:26px">OFF</small></div>
+        <div style="position:absolute;left:60px;right:60px;top:1385px;text-align:center">
+          <div class="d" style="font-size:64px">MarmoreFlex 5kg · rende até 25 m²</div>
+          <div style="font-size:36px;color:var(--m);margin-top:18px;text-decoration:line-through">DE R$ 245,00</div>
+          <div class="d" style="font-size:170px;margin-top:4px;color:var(--gold)">R$ 129,90</div>
+          <div style="font-size:30px;color:var(--m);margin-top:12px;font-weight:600">Frete grátis · Kit de aplicação e primer inclusos</div>
+        </div>
+        <div class="cta d" style="position:absolute;left:120px;right:120px;bottom:66px;height:110px"><span style="font-size:64px">Compre agora</span></div>
+      </div></div>
+    </section>
+
+    <!-- 5. HERO DESKTOP -->
+    <section class="item" data-name="hero-desktop" data-w="1920" data-h="640">
+      <h2>5 · Banner horizontal (desktop / topo de loja)</h2><div class="meta">1920×640</div>
+      <div class="actions"><button data-save>Salvar no site</button><button class="ghost" data-download>Baixar PNG</button><span class="status"></span></div>
+      <div class="frame"><div class="ab" style="width:1920px;height:640px">
+        <div style="position:absolute;left:820px;top:0;width:1100px;height:640px;background:url(images/produto/galeria-05-piso-marmore.webp) center/cover no-repeat"></div>
+        <div style="position:absolute;left:760px;top:0;width:520px;height:640px;background:linear-gradient(90deg,var(--n),rgba(7,29,40,0))"></div>
+        <div style="position:absolute;left:0;top:0;width:24px;height:640px" class="stripes"></div>
+        <div style="position:absolute;left:100px;top:44px">
+          <div><div class="logo-chip" data-logo style="height:72px"></div></div>
+          <div class="tag" style="font-size:30px;padding:4px 18px;margin-top:22px">BLACK FRIDAY MARMOREFLEX</div>
+          <div class="d" style="font-size:108px;margin-top:22px">Piso efeito mármore</div>
+          <div class="d" style="font-size:108px;margin-top:6px"><span class="hl">sem quebra-quebra</span></div>
+          <div style="margin-top:22px"><div style="font-size:24px;color:var(--m);text-decoration:line-through">DE R$ 149,00</div><div class="d" style="font-size:80px">A PARTIR DE <span style="color:var(--gold)">R$ 79,90</span></div></div>
+        </div>
+        <div style="position:absolute;left:100px;bottom:34px;display:flex;gap:28px;font-size:22px;font-weight:800;color:var(--m)"><span>✓ FRETE GRÁTIS</span><span>✓ KIT DE APLICAÇÃO GRÁTIS</span><span>✓ 22 CORES</span></div>
+        <div class="off" style="left:1620px;top:56px;width:220px;height:220px"><small style="font-size:20px">ATÉ</small><b style="font-size:88px">47%</b><small style="font-size:22px">OFF</small></div>
+      </div></div>
+    </section>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.js"></script>
+  <script>
+    (async function () {
+      // Logo original da MarmoreFlex (brand/), sobre fundo branco
+      document.querySelectorAll("[data-logo]").forEach((el) => (el.innerHTML = `<img src="brand/marmoreflex-logo-horizontal-bf.webp" alt="MarmoreFlex">`));
+
+      // Embute cada <use> (necessário para exportar PNG)
+      document.querySelectorAll(".ab svg use").forEach((u) => {
+        const sym = document.querySelector(u.getAttribute("href"));
+        if (!sym) return;
+        const svg = u.closest("svg");
+        svg.setAttribute("viewBox", sym.getAttribute("viewBox"));
+        svg.innerHTML = sym.innerHTML;
+      });
+
+      // Escala de visualização
+      const fit = () => document.querySelectorAll(".item").forEach((it) => {
+        const w = +it.dataset.w, h = +it.dataset.h, frame = it.querySelector(".frame");
+        const s = Math.min(1, frame.parentElement.clientWidth / w);
+        frame.style.width = w * s + "px"; frame.style.height = h * s + "px";
+        frame.firstElementChild.style.transform = `scale(${s})`;
+      });
+      fit(); addEventListener("resize", fit);
+      await document.fonts.ready;
+      await Promise.all([...document.images].map((im) => im.complete ? 0 : new Promise((r) => { im.onload = im.onerror = r; })));
+
+      // Exportação
+      const render = (it) => {
+        const ab = it.querySelector(".ab");
+        return htmlToImage.toPng(ab, { width: +it.dataset.w, height: +it.dataset.h, pixelRatio: 1, style: { transform: "none" }, cacheBust: true });
+      };
+      const save = async (it) => {
+        const st = it.querySelector(".status"); st.textContent = "gerando…";
+        try {
+          const url = await render(it);
+          const r = await fetch(`upload/${it.dataset.name}.png`, { method: "POST", body: url });
+          st.textContent = r.ok ? `salvo em images/banners/${it.dataset.name}.png ✓` : "falhou (servidor local não aceita upload)";
+        } catch (e) { st.textContent = "erro: " + e.message; }
+      };
+      const download = async (it) => {
+        const a = document.createElement("a");
+        a.href = await render(it); a.download = it.dataset.name + ".png"; a.click();
+      };
+      document.querySelectorAll(".item").forEach((it) => {
+        it.querySelector("[data-save]").onclick = () => save(it);
+        it.querySelector("[data-download]").onclick = () => download(it);
+      });
+      document.querySelector("[data-all-save]").onclick = async () => { for (const it of document.querySelectorAll(".item")) await save(it); };
+      document.querySelector("[data-all-download]").onclick = async () => { for (const it of document.querySelectorAll(".item")) await download(it); };
+      window.__bannersReady = true;
+    })();
+  </script>
+</body>
+</html>

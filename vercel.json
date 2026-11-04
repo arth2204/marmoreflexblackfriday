@@ -1,0 +1,16 @@
+{
+  "framework": null,
+  "outputDirectory": ".",
+  "redirects": [
+    { "source": "/produto", "destination": "/#descricao", "permanent": false },
+    { "source": "/avaliacoes", "destination": "/#avaliacoes", "permanent": false },
+    { "source": "/faq", "destination": "/#faq", "permanent": false },
+    { "source": "/rastreio", "destination": "/politicas.html#rastreio", "permanent": false },
+    { "source": "/contato", "destination": "/politicas.html#contato", "permanent": false },
+    { "source": "/termo-de-garantia", "destination": "/politicas.html#garantia", "permanent": false },
+    { "source": "/politica-de-privacidade", "destination": "/politicas.html#privacidade", "permanent": false },
+    { "source": "/termos-de-uso", "destination": "/politicas.html#termos", "permanent": false },
+    { "source": "/politica-de-troca-e-devolucao", "destination": "/politicas.html#troca", "permanent": false },
+    { "source": "/politica-de-reembolso", "destination": "/politicas.html#reembolso", "permanent": false }
+  ]
+}

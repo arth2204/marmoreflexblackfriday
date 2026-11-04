@@ -82,13 +82,13 @@ window.STORE = {
   /* Tamanhos (preço em centavos). Preços e links IGUAIS aos do site atual.
      O link é o mesmo para todas as cores (como hoje): a cor aparece só na tela. */
   offers: [
-    { id: "2kg", kg: 2, m2: 10, label: "2kg", detail: "Banheiro, lavabo ou área pequena", price: 7990, compareAt: 14900,
+    { id: "2kg", kg: 2, image: "images/kits/balde-2kg.png", m2: 10, label: "2kg", detail: "Banheiro, lavabo ou área pequena", price: 7990, compareAt: 14900,
       checkoutUrl: "https://checkout.marmoreflex.com.br/VCCL1O8SD8W4" },
-    { id: "5kg", kg: 5, m2: 25, label: "5kg", detail: "Um cômodo completo ou cozinha", price: 12990, compareAt: 24500, badge: "Mais vendido",
+    { id: "5kg", kg: 5, image: "images/kits/balde-5kg.png", m2: 25, label: "5kg", detail: "Um cômodo completo ou cozinha", price: 12990, compareAt: 24500, badge: "Mais vendido",
       checkoutUrl: "https://checkout.marmoreflex.com.br/VCCL1O8SD7OU" },
-    { id: "10kg", kg: 10, m2: 50, label: "10kg", detail: "Sala e cozinha ou área comercial pequena", price: 22990, compareAt: 42900,
+    { id: "10kg", kg: 10, image: "images/kits/balde-10kg.png", m2: 50, label: "10kg", detail: "Sala e cozinha ou área comercial pequena", price: 22990, compareAt: 42900,
       checkoutUrl: "https://checkout.marmoreflex.com.br/VCCL1O8SD7OT" },
-    { id: "18kg", kg: 18, m2: 90, label: "18kg", detail: "Casa inteira, galpão ou área ampla", price: 37990, compareAt: 71900, badge: "Menor preço por m²",
+    { id: "18kg", kg: 18, image: "images/kits/balde-18kg.png", m2: 90, label: "18kg", detail: "Casa inteira, galpão ou área ampla", price: 37990, compareAt: 71900, badge: "Menor preço por m²",
       checkoutUrl: "https://checkout.marmoreflex.com.br/VCCL1O8SD7OV" }
   ],
   defaultOffer: "5kg",

@@ -229,7 +229,7 @@
     <button class="offer size" type="button" role="radio" aria-checked="false" data-offer="${o.id}">
       ${o.badge ? `<span class="o-badge">${esc(o.badge)}</span>` : ""}
       <span class="radio"></span>
-      <span class="o-kg"><b>${o.kg}</b><small>kg</small></span>
+      <span class="o-pic"><img src="${esc(o.image)}" alt="Balde MarmoreFlex de ${esc(o.label)}" width="120" height="120" loading="lazy"><b class="o-kgtag">${esc(o.label)}</b></span>
       <span class="o-main"><strong>Rende até ${o.m2} m² <em class="o-off">-${pct(o)}%</em></strong><small>${esc(o.detail)}</small>
         <small class="o-save">Economize ${brl(o.compareAt - o.price)}</small></span>
       <span class="o-price"><s>${brl(o.compareAt)}</s>${brl(o.price)}<small class="o-unit">${perM2(o)} por m²</small></span>
@@ -257,6 +257,7 @@
     setAll("[data-price]", brl(o.price));
     setAll("[data-sticky-price]", brl(o.price));
     setAll("[data-sticky-title]", `MarmoreFlex ${o.label}`);
+    $$("[data-sticky-img]").forEach((im) => (im.src = o.image));
     setAll("[data-compare]", brl(o.compareAt));
     setAll("[data-off]", `-${pct(o)}%`);
     setAll("[data-save]", brl(o.compareAt - o.price));
@@ -314,7 +315,7 @@
       const to = offerById(toId);
       $("[data-order-addons]").innerHTML = `
         <button type="button" class="ob-item${upgrade ? " on" : ""}" data-upgrade aria-pressed="${upgrade}">
-          <span class="o-kg ob-kg"><b>${to.kg}</b><small>kg</small></span>
+          <span class="o-pic ob-pic"><img src="${esc(to.image)}" alt="" loading="lazy"><b class="o-kgtag">${esc(to.label)}</b></span>
           <span class="ob-info"><b>${esc(U.title(to.label, to.m2))}</b><small>${esc(U.detail(to.m2 - base.m2))}</small>
             <span class="ob-price"><s>${brl(to.compareAt - base.compareAt)}</s><b>+ ${brl(to.price - base.price)}</b></span></span>
           <span class="ob-check" aria-hidden="true">${icon("check")}</span>

@@ -44,10 +44,10 @@ onde aplicar, calculadora de área, kit, comparativo, especificações, o que ve
 ## Checkout (mesmos links do site atual)
 | Tamanho | Preço | Link |
 |---|---|---|
-| 2kg (até 10 m²) | R$ 149,00 → R$ 79,90 | https://checkout.marmoreflex.com.br/VCCL1O8SD8W4 |
-| 5kg (até 25 m²) | R$ 245,00 → R$ 129,90 | https://checkout.marmoreflex.com.br/VCCL1O8SD7OU |
-| 10kg (até 50 m²) | R$ 429,00 → R$ 229,90 | https://checkout.marmoreflex.com.br/VCCL1O8SD7OT |
-| 18kg (até 90 m²) | R$ 719,00 → R$ 379,90 | https://checkout.marmoreflex.com.br/VCCL1O8SD7OV |
+| 2kg (até 10 m²) | R$ 149,00 → R$ 79,90 | https://checkout.marmoreflex.com.br/pay/1f0e7f15-a4a5-4387-9491-45125605b4d6 |
+| 5kg (até 25 m²) | R$ 245,00 → R$ 129,90 | https://checkout.marmoreflex.com.br/pay/7a60cd29-fda8-40bf-aaca-b98b24d9700a |
+| 10kg (até 50 m²) | R$ 429,00 → R$ 229,90 | https://checkout.marmoreflex.com.br/pay/a8448c2d-c37f-4cb1-9e6d-5bdf486f5374 |
+| 18kg (até 90 m²) | R$ 719,00 → R$ 379,90 | https://checkout.marmoreflex.com.br/pay/51d7a3bb-edc2-42c7-bdcc-14476491337f |
 
 - O link é o mesmo para todas as cores (como no site atual): a cor aparece só na tela, o checkout não a recebe.
 - Popup "Confirmar pedido": o adicional "Leve o próximo tamanho" troca o pedido para o tamanho seguinte

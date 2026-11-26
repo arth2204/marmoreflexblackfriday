@@ -148,6 +148,8 @@
   const lbShow = () => {
     const im = lbList[lbIndex];
     lbImg.src = im.src; lbImg.alt = im.alt || "";
+    const cap = $("[data-lb-caption]");
+    cap.textContent = im.caption || ""; cap.hidden = !im.caption;
     $("[data-lb-counter]").textContent = `${lbIndex + 1} / ${lbList.length}`;
     $$("[data-lb-prev],[data-lb-next],[data-lb-counter]", lb).forEach((b) => (b.hidden = lbList.length < 2));
   };
@@ -220,6 +222,15 @@
     colorTab = b.dataset.colorTab; renderColors();
   });
   $("[data-swatches]").addEventListener("click", (e) => { const b = e.target.closest("[data-color]"); if (b) selectColor(b.dataset.color); });
+  // Prévia ampliada: abre na cor escolhida e passa por todas as cores (sem trocar a seleção)
+  const previewBox = previewEl.closest(".floor-preview");
+  const openColorPreview = () => {
+    if (pageTouchMoved) return;
+    const list = allColors.map((c) => ({ src: c.preview, alt: `Piso MarmoreFlex ${c.name} aplicado em um ambiente`, caption: c.name }));
+    lbOpen(list, Math.max(0, allColors.findIndex((c) => c.name === color.name)));
+  };
+  previewBox.addEventListener("click", openColorPreview);
+  previewBox.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openColorPreview(); } });
 
   /* ---------- Tamanhos e preço ---------- */
   const offerById = (id) => S.offers.find((o) => o.id === id);

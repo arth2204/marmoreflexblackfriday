@@ -23,7 +23,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css?v=1.2">
   <link rel="stylesheet" href="css/v2.css?v=1.2">
-  <link rel="stylesheet" href="css/mf.css?v=1.2">
+  <link rel="stylesheet" href="css/mf.css?v=1.3">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -188,8 +188,9 @@
       <h2 class="subhead" id="cores">Escolha sua <span>cor</span></h2>
       <div class="color-tabs" role="tablist" aria-label="Tipo de cor" data-color-tabs></div>
       <div class="swatches" data-swatches></div>
-      <figure class="floor-preview">
+      <figure class="floor-preview" tabindex="0" role="button" title="Clique para ampliar e ver as outras cores">
         <img data-floor-preview src="images/previews/marmore-classico.webp" alt="Simulação do piso MarmoreFlex Mármore Clássico aplicado em um ambiente" width="800" height="500">
+        <span class="fp-zoom" aria-hidden="true"><svg class="icon"><use href="#i-zoom"/></svg></span>
         <figcaption><span>Prévia no ambiente</span> <b data-floor-caption>Mármore Clássico</b></figcaption>
       </figure>
 
@@ -525,6 +526,7 @@
   <button type="button" class="gallery-arrow prev" aria-label="Imagem anterior" data-lb-prev><svg class="icon"><use href="#i-left"/></svg></button>
   <img alt="">
   <button type="button" class="gallery-arrow next" aria-label="Próxima imagem" data-lb-next><svg class="icon"><use href="#i-right"/></svg></button>
+  <span class="lb-caption" data-lb-caption aria-live="polite" hidden></span>
   <span class="gallery-counter lb-counter" data-lb-counter></span>
 </div>
 
@@ -593,6 +595,6 @@
 </div>
 
 <script src="js/config.js?v=1.2"></script>
-<script src="js/app.js?v=1.2"></script>
+<script src="js/app.js?v=1.3"></script>
 </body>
 </html>
